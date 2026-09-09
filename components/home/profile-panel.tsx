@@ -7,16 +7,20 @@ export function ProfilePanel() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center border-r">
       <Image
-        src="/images/My.png"
+        src="/images/My.webp"
         alt="某星"
         width={150}
         height={150}
         priority
+        unoptimized
         className="rounded-full"
       />
       <div className="my-10 flex h-[55%] w-full flex-col items-center">
         {navItems.map((item) => (
-          <NavButton key={item.label} href={"href" in item ? item.href : undefined}>
+          <NavButton
+            key={item.label}
+            href={"href" in item ? item.href : undefined}
+          >
             {item.label}
           </NavButton>
         ))}
