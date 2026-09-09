@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --page: #f2efe4;
+  --surface: #ffffff;
+  --ink: #6e7f9c;
+  --heading: #8fa0b5;
+  --muted: #b2beb5;
+  --footer: #8d948d;
+  --nav: rgb(152 169 189 / 10%);
+  --nav-hover: rgb(152 169 189 / 50%);
+  --icon-hover: rgb(160 169 189 / 20%);
+  --about-from: #fef9f6;
+  --about-to: #fff7f4;
+  --press: rgb(255 255 255 / 60%);
+  --scroll-track: #f1f1f1;
+  --scroll-thumb: #c1c1c1;
+  --scroll-thumb-hover: #a1a1a1;
+}
+
+.dark {
+  color-scheme: dark;
+  --page: #1b1d22;
+  --surface: #25282f;
+  --ink: #c3cede;
+  --heading: #a5b3c7;
+  --muted: #8e9aa3;
+  --footer: #6f7780;
+  --nav: rgb(152 169 189 / 12%);
+  --nav-hover: rgb(152 169 189 / 35%);
+  --icon-hover: rgb(160 169 189 / 25%);
+  --about-from: #22242a;
+  --about-to: #2a2c33;
+  --press: rgb(255 255 255 / 12%);
+  --scroll-track: #22242a;
+  --scroll-thumb: #454a54;
+  --scroll-thumb-hover: #5a606b;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-footer: var(--footer);
+  --color-nav: var(--nav);
+  --color-nav-hover: var(--nav-hover);
+  --color-icon-hover: var(--icon-hover);
+  --color-traffic-red: #ed6a5f;
+  --color-traffic-yellow: #f6be50;
+  --color-traffic-green: #61c555;
+  --color-about-from: var(--about-from);
+  --color-about-to: var(--about-to);
+  --shadow-press: inset 0 0 50px var(--press);
+  --font-sans: var(--font-geist-sans), "PingFang SC", "Microsoft YaHei", "SimSun",
+    sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover);
+  }
+}
+
+@utility page-enter {
+  animation: blurToClear 1s ease-out both;
+}
+
+@keyframes blurToClear {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
