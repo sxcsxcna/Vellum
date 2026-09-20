@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 const navItemClassName =
-  "relative my-1 flex h-[15%] w-[60%] items-center justify-center overflow-hidden rounded-xl bg-nav text-center text-ink transition-all duration-300 ease-in-out hover:bg-nav-hover active:shadow-press";
+  "relative my-1 flex min-h-11 w-[min(80%,16rem)] items-center justify-center overflow-hidden rounded-xl bg-nav text-center text-ink transition-all duration-300 ease-in-out hover:bg-nav-hover active:shadow-press lg:w-[60%]";
 
 type NavButtonProps = {
   href?: string;

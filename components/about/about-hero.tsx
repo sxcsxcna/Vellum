@@ -1,37 +1,34 @@
-import Image from "next/image";
 import { aboutContent } from "@/lib/site";
 
 export function AboutHero() {
   return (
     <div className="flex w-full flex-col items-center">
-      <Image
+      <img
         src="/images/bg1.webp"
         alt=""
         width={1950}
         height={1482}
-        priority
-        unoptimized
+        fetchPriority="high"
         className="h-auto w-full max-w-full object-cover"
       />
-      <div className="m-5 flex flex-wrap items-center justify-center">
-        <Image
+      <div className="m-4 flex w-full max-w-5xl flex-col items-center justify-center gap-6 px-4 sm:m-5 sm:flex-row sm:flex-wrap sm:gap-0">
+        <img
           src="/images/My.webp"
           alt={aboutContent.name}
           width={400}
           height={400}
-          unoptimized
-          className="m-7.5 rounded-full"
+          className="size-40 rounded-full sm:m-7.5 sm:size-[400px]"
         />
-        <div className="ml-25 m-7.5 h-100 w-150">
-          <h1 className="mt-12.5 mb-5 text-5xl text-ink">
+        <div className="w-full max-w-md text-center sm:ml-12 sm:h-auto sm:w-150 sm:text-left md:ml-25">
+          <h1 className="mb-3 text-4xl text-ink sm:mt-12.5 sm:mb-5 sm:text-5xl">
             {aboutContent.name}
           </h1>
           {aboutContent.roles.map((role) => (
-            <h2 key={role} className="text-heading">
+            <h2 key={role} className="text-base text-heading sm:text-lg">
               {role}
             </h2>
           ))}
-          <h3 className="mt-2.5 text-2xl text-ink">
+          <h3 className="mt-2.5 text-xl text-ink sm:text-2xl">
             {aboutContent.linksLabel}
           </h3>
         </div>

@@ -22,7 +22,7 @@ const controls = [
 
 export function WindowControls() {
   return (
-    <div className="flex h-full w-37.5 items-center">
+    <div className="flex h-full items-center">
       {controls.map((control) => (
         <button
           key={control.label}
@@ -30,8 +30,12 @@ export function WindowControls() {
           title={control.label}
           aria-label={control.label}
           onClick={control.onClick}
-          className={`mx-2.5 h-3.75 w-3.75 cursor-pointer rounded-[15px] shadow-md transition-transform duration-200 hover:scale-110 active:scale-95 ${control.className}`}
-        />
+          className="flex size-11 items-center justify-center sm:mx-1 sm:size-auto sm:p-2.5"
+        >
+          <span
+            className={`block size-3.75 rounded-full shadow-md transition-transform duration-200 hover:scale-110 active:scale-95 ${control.className}`}
+          />
+        </button>
       ))}
     </div>
   );
