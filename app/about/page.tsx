@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/ui/page-shell";
 import { AboutHero } from "@/components/about/about-hero";
+import { AboutStories } from "@/components/about/about-stories";
 import { aboutContent, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,8 +11,9 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <PageShell className="bg-linear-to-r from-about-from to-about-to">
+    <PageShell>
       <AboutHero />
+      <AboutStories />
     </PageShell>
   );
 }

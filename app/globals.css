@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  --page: #f2efe4;
+  --page: #fff6f3;
   --surface: #ffffff;
   --ink: #6e7f9c;
   --heading: #8fa0b5;
@@ -71,6 +71,7 @@
     padding:
       env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background-color: var(--page);
   }
 
   ::-webkit-scrollbar {

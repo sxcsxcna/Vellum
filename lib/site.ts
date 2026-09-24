@@ -86,3 +86,34 @@ export const aboutContent = {
   roles: ["Programmer", "Hikikomori"],
   linksLabel: "Officials link",
 } as const;
+
+export const aboutStories = [
+  {
+    id: "galgame",
+    title: "GalGame",
+    image: "/images/about01.webp",
+    direction: "rtl",
+    body: "把整晚交给一部作品。从选项到 CG，从角色的一句话到整条线的结局，我喜欢被故事轻轻推着走——在别人的世界里，认真过完一小段人生。",
+  },
+  {
+    id: "classical",
+    title: "古典乐",
+    image: "/images/about02.webp",
+    direction: "ltr",
+    body: "耳机里常年是钢琴与弦乐。巴赫的工整、肖邦的夜曲、德彪西的雾气，用来把代码和日常都放慢一点。不是为了显得有品味，只是旋律比人话更先到达。",
+  },
+  {
+    id: "coding",
+    title: "编程",
+    image: "/images/about03.webp",
+    direction: "rtl",
+    body: "喜欢把模糊的想法拆成能跑的结构。JavaScript、Node、React 都是顺手的工具；真正上瘾的是那种「终于对上了」的瞬间——屏幕上的东西，开始按你想的方式呼吸。",
+  },
+  {
+    id: "ml",
+    title: "机器学习",
+    image: "/images/about04.webp",
+    direction: "ltr",
+    body: "现在的研究方向是机器学习，也常碰到图神经网络。让模型从数据里自己看见规律，再把结论送回工程里落地。人工智能和软件工程交叉的那一块，是我最想一直做下去的事。",
+  },
+] as const;
