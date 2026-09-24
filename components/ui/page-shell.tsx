@@ -1,3 +1,6 @@
+/**
+ * 页面外层容器：统一入场动画、最小视口高度，可选居中布局。
+ */
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 

@@ -1,7 +1,11 @@
+/**
+ * 仿 macOS 窗口的「交通灯」控制按钮：红 = 关闭页面、黄 = 浅色、绿 = 暗色。
+ */
 "use client";
 
 import { applyTheme, closePage } from "@/lib/theme";
 
+// 三个控制按钮的定义：标签、颜色与点击行为
 const controls = [
   {
     label: "关闭页面",

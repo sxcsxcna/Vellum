@@ -1,3 +1,9 @@
+/**
+ * 站点内容集中配置：站点元信息、首页文案、导航、社交链接与「关于」页内容。
+ * 各组件从这里读取数据，方便统一维护。
+ */
+
+// 站点基础信息与 SEO 元数据
 export const site = {
   name: "某星",
   englishName: "Star",
@@ -6,14 +12,17 @@ export const site = {
   copyright: "© 2026 ~ Unending! Star blog GitHub开源",
 } as const;
 
+// 富文本片段类型：普通字符串，或需要加粗显示的片段
 export type TextPart = string | { bold: string };
 
+// 首页简介的段落结构：标题、标题层级与若干段落（每段为富文本片段数组）
 export type IntroSection = {
   title: string;
   level: "h2" | "h3";
   paragraphs: TextPart[][];
 };
 
+// 首页自我介绍内容
 export const homeIntro = {
   heading: "关于我",
   greeting: "Hello World，I'm Star.",
@@ -53,6 +62,7 @@ export const homeIntro = {
   ] satisfies IntroSection[],
 };
 
+// 首页左侧导航菜单项（无 href 的为占位菜单）
 export const navItems = [
   { label: "关于我", href: "/about" },
   { label: "我的日常" },
@@ -60,6 +70,7 @@ export const navItems = [
   { label: "开发文档" },
 ] as const;
 
+// 社交链接（SVG 图标路径，颜色由 CSS currentColor 控制）
 export const socialLinks = [
   {
     id: "github",
@@ -81,8 +92,41 @@ export const socialLinks = [
   },
 ] as const;
 
+// 关于页顶部信息：姓名、角色标签与链接标题
 export const aboutContent = {
   name: "某星",
   roles: ["Programmer", "Hikikomori"],
   linksLabel: "Officials link",
 } as const;
+
+// 关于页兴趣故事列表：direction 控制图文在桌面端的左右排列顺序
+export const aboutStories = [
+  {
+    id: "galgame",
+    title: "GalGame",
+    image: "/images/about01.webp",
+    direction: "rtl",
+    body: "把整晚交给一部作品。从选项到 CG，从角色的一句话到整条线的结局，我喜欢被故事轻轻推着走——在别人的世界里，认真过完一小段人生。",
+  },
+  {
+    id: "classical",
+    title: "古典乐",
+    image: "/images/about02.webp",
+    direction: "ltr",
+    body: "耳机里常年是钢琴与弦乐。巴赫的工整、肖邦的夜曲、德彪西的雾气，用来把代码和日常都放慢一点。不是为了显得有品味，只是旋律比人话更先到达。",
+  },
+  {
+    id: "coding",
+    title: "编程",
+    image: "/images/about03.webp",
+    direction: "rtl",
+    body: "喜欢把模糊的想法拆成能跑的结构。JavaScript、Node、React 都是顺手的工具；真正上瘾的是那种「终于对上了」的瞬间——屏幕上的东西，开始按你想的方式呼吸。",
+  },
+  {
+    id: "ml",
+    title: "机器学习",
+    image: "/images/about04.webp",
+    direction: "ltr",
+    body: "现在的研究方向是机器学习，也常碰到图神经网络。让模型从数据里自己看见规律，再把结论送回工程里落地。人工智能和软件工程交叉的那一块，是我最想一直做下去的事。",
+  },
+] as const;

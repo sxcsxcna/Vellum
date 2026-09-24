@@ -1,5 +1,10 @@
+/**
+ * 首页右侧自我介绍面板：标题 + 分段简介 + 版权信息。
+ * RichText 支持把段落中的部分片段加粗渲染。
+ */
 import { homeIntro, site, type TextPart } from "@/lib/site";
 
+// 渲染富文本片段：字符串原样输出，{ bold } 对象片段加粗
 function RichText({ parts }: { parts: TextPart[] }) {
   return (
     <>
@@ -20,6 +25,7 @@ export function IntroPanel() {
       <h1 className="text-3xl font-bold text-ink sm:text-4xl">{homeIntro.heading}</h1>
       <p className="mt-1 text-sm text-ink">{homeIntro.greeting}</p>
 
+      {/* 分段简介：标题 + 若干段落 */}
       {homeIntro.sections.map((section) => {
         const Heading = section.level;
         const headingClass =

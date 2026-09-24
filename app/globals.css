@@ -1,10 +1,13 @@
+/* 引入 Tailwind CSS v4 */
 @import "tailwindcss";
 
+/* 注册自定义暗色模式变体：给 .dark 类（及其后代）启用暗色工具类 */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* 浅色主题配色与阴影变量（默认） */
 :root {
   color-scheme: light;
-  --page: #f2efe4;
+  --page: #fff6f3;
   --surface: #ffffff;
   --ink: #6e7f9c;
   --heading: #8fa0b5;
@@ -21,6 +24,7 @@
   --scroll-thumb-hover: #a1a1a1;
 }
 
+/* 暗色主题配色，覆盖浅色主题同名变量 */
 .dark {
   color-scheme: dark;
   --page: #1b1d22;
@@ -40,6 +44,7 @@
   --scroll-thumb-hover: #5a606b;
 }
 
+/* 把 CSS 变量映射成 Tailwind 主题 token，供 bg-page / text-ink 等工具类使用 */
 @theme inline {
   --color-page: var(--page);
   --color-surface: var(--surface);
@@ -61,6 +66,7 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
+/* 基础样式层：全局背景、安全区、自定义滚动条 */
 @layer base {
   html {
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -71,6 +77,7 @@
     padding:
       env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background-color: var(--page);
   }
 
   ::-webkit-scrollbar {
@@ -92,10 +99,12 @@
   }
 }
 
+/* 页面进入动画工具类：模糊 + 缩放淡入 */
 @utility page-enter {
   animation: blurToClear 1s ease-out both;
 }
 
+/* 从模糊、放大、透明过渡到清晰的关键帧 */
 @keyframes blurToClear {
   from {
     opacity: 0;
