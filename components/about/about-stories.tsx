@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 /**
  * 关于页兴趣故事列表：图片 + 文案交错排列，滚动进入视口时触发 GSAP 位移动画。
  */
+=======
+>>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -13,7 +16,10 @@ import { cn } from "@/lib/cn";
 export function AboutStories() {
   const rootRef = useRef<HTMLElement>(null);
 
+<<<<<<< HEAD
   // 布局阶段注册 ScrollTrigger，为每条故事的图片 / 文案添加滚动进入动画
+=======
+>>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +28,10 @@ export function AboutStories() {
       return;
     }
 
+<<<<<<< HEAD
     // 尊重系统「减少动态效果」偏好，直接跳过动画
+=======
+>>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
@@ -33,10 +42,15 @@ export function AboutStories() {
       rows.forEach((row) => {
         const image = row.querySelector<HTMLElement>("[data-story-image]");
         const copy = row.querySelector<HTMLElement>("[data-story-copy]");
+<<<<<<< HEAD
         // 根据 data-direction 决定元素从右侧还是左侧滑入
         const fromRight = row.dataset.direction === "rtl";
 
         // 图片：横向位移 + 淡入
+=======
+        const fromRight = row.dataset.direction === "rtl";
+
+>>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
         if (image) {
           gsap.fromTo(
             image,
@@ -55,7 +69,10 @@ export function AboutStories() {
           );
         }
 
+<<<<<<< HEAD
         // 文案：反方向位移 + 淡入
+=======
+>>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
         if (copy) {
           gsap.fromTo(
             copy,
@@ -76,7 +93,10 @@ export function AboutStories() {
       });
     }, root);
 
+<<<<<<< HEAD
     // 组件卸载时清理 ScrollTrigger 与动画
+=======
+>>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
     return () => ctx.revert();
   }, []);
 
