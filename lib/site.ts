@@ -99,10 +99,7 @@ export const aboutContent = {
   linksLabel: "Officials link",
 } as const;
 
-<<<<<<< HEAD
 // 关于页兴趣故事列表：direction 控制图文在桌面端的左右排列顺序
-=======
->>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
 export const aboutStories = [
   {
     id: "galgame",

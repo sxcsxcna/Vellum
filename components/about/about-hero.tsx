@@ -1,19 +1,13 @@
-<<<<<<< HEAD
 /**
  * 关于页顶部 hero：横幅背景 + 头像 + 姓名与角色标签。
  */
-=======
->>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
 import Image from "next/image";
 import { aboutContent } from "@/lib/site";
 
 export function AboutHero() {
   return (
     <div className="flex w-full flex-col items-center">
-<<<<<<< HEAD
       {/* 顶部横幅：背景纹理 + 主插图 */}
-=======
->>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
       <div className="flex w-full flex-col items-center bg-[#fff6f3] bg-[url('/images/bg-shiratama.avif')] bg-cover bg-bottom bg-no-repeat px-6 py-16 sm:px-12 sm:py-24">
         <Image
           src="/images/bg1.webp"
@@ -25,10 +19,7 @@ export function AboutHero() {
           className="h-auto w-full object-contain"
         />
 
-<<<<<<< HEAD
         {/* 头像与姓名 / 角色信息 */}
-=======
->>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
         <div className="mt-10 flex w-full flex-row items-center justify-center gap-6 sm:mt-14 sm:gap-14">
           <Image
             src="/images/My.webp"
@@ -42,10 +33,7 @@ export function AboutHero() {
             <h1 className="mb-2 text-3xl text-ink sm:mb-4 sm:text-5xl">
               {aboutContent.name}
             </h1>
-<<<<<<< HEAD
             {/* 角色标签列表 */}
-=======
->>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
             {aboutContent.roles.map((role) => (
               <h2 key={role} className="text-sm text-heading sm:text-lg">
                 {role}

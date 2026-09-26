@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 /**
  * 首页左侧面板：头像 + 导航按钮 + 社交链接。
  */
-=======
->>>>>>> bc65cdff3c5a2091ffac45bafe31b570cd4262e0
 import Image from "next/image";
 import { navItems } from "@/lib/site";
 import { NavButton } from "@/components/home/nav-button";
